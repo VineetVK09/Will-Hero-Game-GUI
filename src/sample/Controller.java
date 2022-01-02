@@ -4,6 +4,7 @@ import javafx.animation.Interpolator;
 import javafx.animation.RotateTransition;
 import javafx.animation.TranslateTransition;
 import javafx.event.ActionEvent;
+import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
@@ -15,6 +16,7 @@ import javafx.scene.control.Button;
 import javafx.scene.control.ButtonType;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
+import javafx.scene.input.KeyEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.transform.Rotate;
 import javafx.stage.Stage;
@@ -23,6 +25,8 @@ import javafx.util.Duration;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
+
+import static javax.swing.SwingConstants.RIGHT;
 
 public class Controller  implements Initializable {
 
@@ -50,6 +54,13 @@ public class Controller  implements Initializable {
 
     @FXML
     private ImageView myshuriken;
+
+    @FXML
+    private ImageView myredorc;
+
+    @FXML
+    private ImageView axe;
+
 
 
 
@@ -80,6 +91,15 @@ public class Controller  implements Initializable {
         trans.setByY(-150);
         trans.setAutoReverse(true);
         trans.play();
+
+        TranslateTransition transt = new TranslateTransition();
+        transt.setNode(myredorc);
+        transt.setDuration(Duration.millis(680));
+        transt.setCycleCount(TranslateTransition.INDEFINITE);
+        transt.setByY(-140);
+        transt.setAutoReverse(true);
+        transt.play();
+
 
 
         // rotate
@@ -113,6 +133,8 @@ public class Controller  implements Initializable {
 
 
 
+
+
     }
 
 
@@ -141,9 +163,27 @@ public class Controller  implements Initializable {
     public void play(ActionEvent event) throws IOException
     {
         //myimage.setImage(myImage);
-        Parent root = FXMLLoader.load(getClass().getResource("play.fxml"));
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("play.fxml"));
+       // Parent root = FXMLLoader.load(getClass().getResource("play.fxml"));
+        Parent root = loader.load();
+
+
         stage = (Stage)((Node)event.getSource()).getScene().getWindow();
         scene = new Scene(root);
+
+        scene.setOnKeyPressed(keyEvent ->  {
+                switch(keyEvent.getCode()){
+                    case RIGHT:
+                        myImage.setLayoutX(myImage.getLayoutX()+10);
+                        break;
+                    default:
+                        break;
+
+
+                }
+        });
+
+
         stage.setScene(scene);
         stage.show();
     }
@@ -196,6 +236,8 @@ public class Controller  implements Initializable {
            //stage.close();
         }
     }
+
+
 
     //public void initialize(ActionEvent actionEvent)
 
