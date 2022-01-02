@@ -45,12 +45,20 @@ public class Controller  implements Initializable {
     @FXML
     private ImageView mycoin;
 
+    @FXML
+    private ImageView myaxe;
+
+    @FXML
+    private ImageView myshuriken;
+
 
 
 
     private Stage stage;
     private Scene scene;
     private Parent root;
+    Scene sc;
+
 
     @Override
     public void initialize(URL arg0, ResourceBundle arg1)
@@ -85,9 +93,30 @@ public class Controller  implements Initializable {
         rotat.play();
 
 
+        RotateTransition shuriken = new RotateTransition();
+        shuriken.setNode(myshuriken);
+        shuriken.setDuration(Duration.millis(2000));
+        shuriken.setCycleCount(TranslateTransition.INDEFINITE);
+        shuriken.setInterpolator(Interpolator.LINEAR);
+        shuriken.setByAngle(360);
+        shuriken.setAxis(Rotate.Z_AXIS);
+        shuriken.play();
+
+        RotateTransition axe = new RotateTransition();
+        axe.setNode(myaxe);
+        axe.setDuration(Duration.millis(2000));
+        axe.setCycleCount(TranslateTransition.INDEFINITE);
+        axe.setInterpolator(Interpolator.LINEAR);
+        axe.setByAngle(360);
+        axe.setAxis(Rotate.Y_AXIS);
+        axe.play();
+
 
 
     }
+
+
+
 
 
         public void screen(ActionEvent event) throws IOException

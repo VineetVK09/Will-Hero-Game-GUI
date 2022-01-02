@@ -19,19 +19,14 @@
          <font>
             <Font name="System Bold" size="12.0" />
          </font></Button>
-      <ImageView fx:id="myImage" fitHeight="48.0" fitWidth="47.0" layoutX="38.0" layoutY="370.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fx:id="myImage" fitHeight="48.0" fitWidth="47.0" layoutX="113.0" layoutY="248.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@assets/hero.jpg" />
          </image>
       </ImageView>
-      <ImageView fx:id="myorc" fitHeight="77.0" fitWidth="83.0" layoutX="613.0" layoutY="342.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fx:id="myorc" fitHeight="77.0" fitWidth="83.0" layoutX="535.0" layoutY="224.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@assets/orc.jpeg" />
-         </image>
-      </ImageView>
-      <ImageView fx:id="myaxe" fitHeight="26.0" fitWidth="36.0" layoutX="14.0" layoutY="468.0" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@assets/axe.jpg" />
          </image>
       </ImageView>
       <Label layoutX="337.0" layoutY="3.0" prefHeight="48.0" prefWidth="47.0" text="23">
@@ -39,9 +34,29 @@
             <Font size="31.0" />
          </font>
       </Label>
-      <ImageView fx:id="mycoin" fitHeight="38.0" fitWidth="62.0" layoutX="670.0" layoutY="8.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="219.0" fitWidth="232.0" layoutX="27.0" layoutY="224.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@assets/coin.jpg" />
+            <Image url="@assets/Island2.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="149.0" fitWidth="233.0" layoutX="474.0" layoutY="288.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@assets/Island1.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="mycoin" fitHeight="42.0" fitWidth="40.0" layoutX="665.0" layoutY="6.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@assets/Coin.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="myshuriken" fitHeight="48.0" fitWidth="47.0" layoutX="14.0" layoutY="447.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@assets/WeaponShuriken%20(1).png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="myaxe" fitHeight="48.0" fitWidth="47.0" layoutX="86.0" layoutY="448.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@assets/WeaponAxe.png" />
          </image>
       </ImageView>
    </children>
